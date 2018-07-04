@@ -16,9 +16,9 @@ import time
 def get_content_list(file_path):
     with open(file_path) as f:
         content=f.read()
-        content=content.replace("\"",'')
-        name_list=content.split(',')
-    return name_list
+        name_list=eval('['+content+']')
+        return name_list
+    return []
 
 if __name__ == '__main__':
     cal_time=time.time()
@@ -28,9 +28,8 @@ if __name__ == '__main__':
     name_list.sort()
     for name in name_list:
         name_score=0
-        name=name.lower()
         for m in name:
-            name_score=name_score+ord(m)-ord('a')+1
+            name_score=name_score+ord(m)-ord('A')+1
         name_score*=count
         scores+=name_score
         count+=1
