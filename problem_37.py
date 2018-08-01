@@ -47,5 +47,5 @@ if __name__ == '__main__':
             sums+=k
             round+=1
         k+=2
-    print(sums)
-    print((time()-cal_time))
+    print("The sum of first eleven truncatable primes is %d"%sums)
+    print("calculation time is %f"%(time()-cal_time))
