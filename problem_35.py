@@ -8,7 +8,9 @@ from time import time
 
 def get_prime_sieve(sieve_limit):
     sieve_list=[True for m in range(0,sieve_limit)]
-    for m in range(3,sieve_limit):
+    sieve_list[0]=False
+    sieve_list[1]=False
+    for m in range(2,sieve_limit):
         if sieve_list[m]==False:
             continue
         count=2
